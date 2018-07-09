@@ -1,6 +1,13 @@
 import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
 
+
+export const CHECK_ANSWER = 'CHECK_ANSWER';
+export const checkAnswer = answer => ({
+    type: CHECK_ANSWER,
+    answer
+});
+
 export const FETCH_PROTECTED_DATA_SUCCESS = 'FETCH_PROTECTED_DATA_SUCCESS';
 export const fetchProtectedDataSuccess = data => ({
     type: FETCH_PROTECTED_DATA_SUCCESS,

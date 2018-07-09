@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import Input from './input';
-import userAnswer from '../actions/users';
+import userAnswer from '../actions/protected-data';
 // import {Field, reduxForm, focus} from 'redux-form';
 
 export class QuestionCard extends React.Component{
@@ -13,7 +13,7 @@ export class QuestionCard extends React.Component{
         <section>
           word in Espanol  
         </section>
-            
+        
       </section>
   }
 }
