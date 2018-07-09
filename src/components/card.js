@@ -25,7 +25,7 @@ export class QuestionCard extends React.Component{
           Name:
           <input type="text" name="name"  ref={this.input}/>
         </label>
-        {/* <input type="submit" value="Submit" /> */}
+        <input type="submit" value="Submit" />
       </form>
       </section>
   }

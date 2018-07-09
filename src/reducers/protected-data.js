@@ -1,10 +1,11 @@
 import {
     FETCH_PROTECTED_DATA_SUCCESS,
-    FETCH_PROTECTED_DATA_ERROR
+    FETCH_PROTECTED_DATA_ERROR,
+    CHECK_ANSWER
 } from '../actions/protected-data';
 
 const initialState = {
-    answer: '',
+    answer: null,
     data: '',
     error: null
 };
@@ -19,6 +20,11 @@ export default function reducer(state = initialState, action) {
         return Object.assign({}, state, {
             error: action.error
         });
+    } else if (action.type === CHECK_ANSWER){
+        return {
+            ...state,
+            answer: action.answer
+        };
     }
     return state;
 }
