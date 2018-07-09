@@ -16,13 +16,14 @@ export class QuestionCard extends React.Component{
     console.log(answer);
   }
   render(){
+    
     return <section>
         <section>
           word in Espanol  
         </section>
         <form onSubmit={e => this.checkAnswer(e)}>
         <label>
-          Name:
+          Your Answer:
           <input type="text" name="name"  ref={this.input}/>
         </label>
         <input type="submit" value="Submit" />
@@ -31,4 +32,10 @@ export class QuestionCard extends React.Component{
   }
 }
 
-export default connect()(QuestionCard);
+const mapStateToProps = state => {
+  return {
+    answer: state.protectedData.answer
+  }
+};
+
+export default connect(mapStateToProps)(QuestionCard);
