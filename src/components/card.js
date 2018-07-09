@@ -1,7 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {checkAnswer} from '../actions/protected-data';
-import userAnswer from '../actions/protected-data';
 // import {Field, reduxForm, focus} from 'redux-form';
 
 export class QuestionCard extends React.Component{
