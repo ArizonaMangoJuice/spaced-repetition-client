@@ -4,9 +4,6 @@ import requiresLogin from './requires-login';
 import {fetchProtectedData} from '../actions/protected-data';
 
 export class Dashboard extends React.Component {
-    constructor(props){
-        super(props);
-    }
     componentDidMount() {
         this.props.dispatch(fetchProtectedData());
     }
