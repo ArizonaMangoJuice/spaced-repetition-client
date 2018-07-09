@@ -22,7 +22,7 @@ if (authToken) {
     const token = authToken;
     console.log(token);
     store.dispatch(setAuthToken(token));
-    store.dispatch(refreshAuthToken());
+    // store.dispatch(refreshAuthToken());
 }
 
 export default store;
