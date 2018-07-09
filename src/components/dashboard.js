@@ -4,22 +4,44 @@ import requiresLogin from './requires-login';
 import {fetchProtectedData} from '../actions/protected-data';
 
 export class Dashboard extends React.Component {
+    constructor(props){
+        super(props);
+    }
     componentDidMount() {
         this.props.dispatch(fetchProtectedData());
     }
 
+
     render() {
-        return (
-            <div className="dashboard">
-                <div className="dashboard-username">
-                    Username: {this.props.username}
+        let test;
+        if(this.props.protectedData.length > 0){
+            // test = this.protectedData[0].username;
+            console.log(this.props.protectedData);
+            return (
+                <div className="dashboard">
+                    <div className="dashboard-username">
+                        Username: {this.props.username}
+                    </div>
+                    <div className="dashboard-name">Name: {this.props.name}</div>
+                    <div className="dashboard-protected-data">
+                        {this.props.protectedData[0].username}
+                    </div>
                 </div>
-                <div className="dashboard-name">Name: {this.props.name}</div>
-                <div className="dashboard-protected-data">
-                    Protected data: {this.props.protectedData}
+            );
+        }else{
+            return (
+                <div className="dashboard">
+                    <div className="dashboard-username">
+                        Username: {this.props.username}
+                    </div>
+                    <div className="dashboard-name">Name: {this.props.name}</div>
+                    <div className="dashboard-protected-data">
+                       
+                    </div>
                 </div>
-            </div>
-        );
+            );
+        }
+        
     }
 }
 
