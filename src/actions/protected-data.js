@@ -22,7 +22,7 @@ export const fetchProtectedDataError = error => ({
 
 export const fetchProtectedData = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
-    return fetch(`${API_BASE_URL}/api/users`, {
+    return fetch(`${API_BASE_URL}/api/questions`, {
         method: 'GET',
         headers: {
             // Provide our auth token as credentials

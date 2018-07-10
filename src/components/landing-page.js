@@ -15,8 +15,8 @@ export function LandingPage(props) {
     return (
         <div className="home">
             <h2>Learn Spanish Quickly</h2>
-            <QuestionCard />
-            <Answer isCorrect={true}/>
+            {/* <QuestionCard /> */}
+            {/* <Answer isCorrect={true}/> */}
             <LoginForm />
             <Link to="/register">Register</Link>
         </div>

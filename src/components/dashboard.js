@@ -2,18 +2,24 @@ import React from 'react';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import {fetchProtectedData} from '../actions/protected-data';
+import { QuestionCard } from './card';
+import Answer from './answer';
 
 export class Dashboard extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            questionIndex: Math.ceil(Math.random() * 10)
+        }
+    }
     componentDidMount() {
         this.props.dispatch(fetchProtectedData());
     }
 
 
     render() {
-        let test;
         if(this.props.protectedData.length > 0){
-            // test = this.protectedData[0].username;
-            console.log(this.props.protectedData);
+            // console.log();
             return (
                 <div className="dashboard">
                     <div className="dashboard-username">
@@ -21,7 +27,8 @@ export class Dashboard extends React.Component {
                     </div>
                     <div className="dashboard-name">Name: {this.props.name}</div>
                     <div className="dashboard-protected-data">
-                        {this.props.protectedData[0].username}
+                        {this.props.protectedData[this.state.questionIndex].word}
+                        <QuestionCard answer={this.props.protectedData[this.state.questionIndex].answer}/>
                     </div>
                 </div>
             );
