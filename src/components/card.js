@@ -22,6 +22,7 @@ export class QuestionCard extends React.Component{
   }
   render(){
     console.log(this.props.question);
+    // let button = <></input>
     return <section>
         {/* <section>
           word in Espanol  
@@ -33,7 +34,8 @@ export class QuestionCard extends React.Component{
           Your Answer:
           <input type="text" name="name"  ref={this.input}/>
         </label>
-        <input type="submit" value="Submit" />
+        {this.props.answer !== null ? <button>test</button> : ''}
+        {this.props.answer !== null ? <input type="submit" value="Submit" disabled/> : <input type="submit" value="Submit" />}
       </form>
       </section>
   }
@@ -41,7 +43,8 @@ export class QuestionCard extends React.Component{
 
 const mapStateToProps = state => {
   return {
-    question: state.protectedData.data
+    question: state.protectedData.data,
+    answer: state.protectedData.answer
   }
 };
 
