@@ -1,10 +1,16 @@
 import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
-
+import jwtDecode from 'jwt-decode';
 
 export const CHECK_ANSWER = 'CHECK_ANSWER';
-export const checkAnswer = answer => ({
+export const checkAnswer = input => ({
     type: CHECK_ANSWER,
+    input
+});
+
+export const RECIEVE_ANSWER = 'RECIEVE_ANSWER';
+export const recieveAnswer = answer => ({
+    type: RECIEVE_ANSWER,
     answer
 });
 
@@ -22,6 +28,8 @@ export const fetchProtectedDataError = error => ({
 
 export const sendAnswer = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
+    const decodedToken = jwtDecode(authToken);
+    let userId = decodedToken.user.id;
     const answer = getState().protectedData.answer;
     return fetch(`${API_BASE_URL}/api/users/answer`, {
         method: 'POST',
@@ -30,15 +38,19 @@ export const sendAnswer = () => (dispatch, getState) => {
             'content-type': 'application/json',
             Authorization: `Bearer ${authToken}`
         },
-        body: JSON.stringify(answer)
+        body: JSON.stringify({
+            answer,
+            userId
+        })
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
         .then((data) => {
-            // console.log(data);
-            // dispatch(fetchProtectedDataSuccess(data));            
+            console.log(data);
+            dispatch(recieveAnswer(data));            
         })
         .catch(err => {
+            console.error(err);
             // dispatch(fetchProtectedDataError(err));
         });
 }

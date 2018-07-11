@@ -27,6 +27,7 @@ export class Dashboard extends React.Component {
                     </div>
                     {/* <div className="dashboard-name">Name: {this.props.name}</div> */}
                     <div className="dashboard-protected-data">
+                        <Answer />
                         {this.props.protectedData[0].word}
                         <QuestionCard/>
                     </div>
