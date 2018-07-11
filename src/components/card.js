@@ -8,22 +8,24 @@ export class QuestionCard extends React.Component{
   constructor(props){
     super(props);
     this.input = React.createRef();
-    this.state
+    this.checkAnswer = this.checkAnswer.bind(this)
   }
   checkAnswer(e){
     e.preventDefault();
     let answer = this.input.current.value;
-    console.log(this.props.answer);
-    console.log(answer === this.props.answer);
-    console.log('correct');
+    this.props.dispatch(checkAnswer(answer));
+    // console.log(this.props.answer);
+    // console.log(answer === this.props.answer);
+    // console.log('correct');
     // console.log(this.props.answer);
   }
   render(){
-    
+    console.log(this.props.question);
     return <section>
         {/* <section>
           word in Espanol  
         </section> */}
+        <h1>{this.props.question}</h1>
         {/* <Answer /> */}
         <form onSubmit={e => this.checkAnswer(e)}>
         <label>
@@ -38,7 +40,7 @@ export class QuestionCard extends React.Component{
 
 // const mapStateToProps = state => {
 //   return {
-//     answer: state.protectedData[0].answer
+//     question: state.protectedData.data
 //   }
 // };
 

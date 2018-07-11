@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import {fetchProtectedData} from '../actions/protected-data';
-import { QuestionCard } from './card';
+import QuestionCard  from './card';
 import Answer from './answer';
 
 export class Dashboard extends React.Component {
@@ -28,7 +28,7 @@ export class Dashboard extends React.Component {
                     {/* <div className="dashboard-name">Name: {this.props.name}</div> */}
                     <div className="dashboard-protected-data">
                         {this.props.protectedData[0].word}
-                        <QuestionCard answer={this.props.protectedData[0].answer}/>
+                        <QuestionCard question={this.props.protectedData}/>
                     </div>
                 </div>
             );
