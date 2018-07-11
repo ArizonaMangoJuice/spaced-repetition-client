@@ -20,6 +20,29 @@ export const fetchProtectedDataError = error => ({
     error
 });
 
+export const sendAnswer = () => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    const answer = getState().protectedData.answer;
+    return fetch(`${API_BASE_URL}/api/users/answer`, {
+        method: 'POST',
+        headers: {
+            // Provide our auth token as credentials
+            'content-type': 'application/json',
+            Authorization: `Bearer ${authToken}`
+        },
+        body: JSON.stringify(answer)
+    })
+        .then(res => normalizeResponseErrors(res))
+        .then(res => res.json())
+        .then((data) => {
+            // console.log(data);
+            // dispatch(fetchProtectedDataSuccess(data));            
+        })
+        .catch(err => {
+            // dispatch(fetchProtectedDataError(err));
+        });
+}
+
 export const fetchProtectedData = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/api/users/next`, {
