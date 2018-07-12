@@ -8,8 +8,8 @@ If your guess is correct, you'll see a message saying so and your score tally in
 If your guess is incorrect, you'll see a message saying so, and your score will remain unchanged!
 
 ## Features
--Learn 10 Spanish words!
--App will help you learn the words you don't know
+- Learn 10 Spanish words!
+- App will help you learn the words you don't know
 
 ## Code style
 Standard/Thinkful-style
