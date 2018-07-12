@@ -37,6 +37,7 @@ export class QuestionCard extends React.Component{
           <CorrectAnswer />
         </section>
         <section className='yellow'>
+          <p id='instruction'>Type your answer</p>
           <form onSubmit={e => this.checkAnswer(e)} className='form'>
             <section className='inputs'>
               <section className='row'>
