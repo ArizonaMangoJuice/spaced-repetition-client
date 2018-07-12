@@ -3,6 +3,10 @@ import {connect} from 'react-redux';
 import {checkAnswer, sendAnswer, fetchProtectedData} from '../actions/protected-data';
 import { refreshAuthToken } from '../actions/auth';
 import Word from './word';
+import CorrectAnswer from './correctAnswer';
+import Answer from './answer';
+import Counter from './counter';
+import './dashboard.css';
 // import {Field, reduxForm, focus} from 'redux-form';
 
 export class QuestionCard extends React.Component{
@@ -25,16 +29,29 @@ export class QuestionCard extends React.Component{
   }
 
   render(){
-    return <section>
-        <Word />
-        <form onSubmit={e => this.checkAnswer(e)}>
-        <label>
-          Your Answer:
-          <input type="text" name="name"  ref={this.input}/>
-        </label>
-        {this.props.answer !== null ? <button type="button" onClick={() => this.nextQuestion()}>Next</button> : ''}
-        {this.props.answer !== null ? <input type="submit" value="Submit" disabled/> : <input type="submit" value="Submit" />}
-      </form>
+    return <section className='container'>
+        <section className='red'>
+          <Counter />
+          <Word />
+          <Answer />
+          <CorrectAnswer />
+        </section>
+        <section className='yellow'>
+          <form onSubmit={e => this.checkAnswer(e)} className='form'>
+            <section className='inputs'>
+              <section className='row'>
+                <section className='column name-group'>
+                  <label className='label'>
+                    Your Answer:
+                    <input className='text-input name-input' type="text" name="name"  ref={this.input}/>
+                  </label>
+                </section>
+              </section>
+            </section>
+            {this.props.answer !== null ? <section className='buttons'><button className='submit-button' type="button" onClick={() => this.nextQuestion()}>Next</button></section> : ''}
+            {this.props.answer !== null ? <section className='buttons'><input className='submit-button' type="submit" value="Submit" disabled/></section> : <section className='buttons'><input className='submit-button' type="submit" value="Submit" /></section>}
+          </form>
+        </section>
       </section>
   }
 }

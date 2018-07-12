@@ -1,0 +1,163 @@
+.word, h2 {
+  font-family: Arvo, sans-serif;
+}
+.word{
+	font-size: 20px;
+	display: inline-box;
+	width: 150px;
+	/* margin-top: 2.5em; */
+}
+
+.container {
+  font-family: PT Sans, sans-serif;
+  font-size: 18px;
+  width: 80%;
+  min-width: 620px;
+  max-width: 700px;
+  height: 360px;
+  margin: 50px auto;
+  background: #ffc400;
+  border-radius: 9px;
+  overflow: hidden;
+}
+
+.red,
+.yellow {
+  float: left;
+  padding: 20px;
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.red {
+  width: 33%;
+  position: relative;
+  padding-right: 24px;
+  background: #c60b1e;
+  color: #ffc400;
+}
+
+.red p {
+	width: 180px;
+	font-size: 34px;
+	text-overflow: auto;
+}
+
+.red:before {
+  content: "";
+  width: 36px;
+  height: 36px;
+  display: block;
+  position: absolute;
+  top: -18px;
+  right: -7.2px;
+  z-index: 1;
+}
+
+#counter{
+  font-size: 18px;
+}
+
+#correct-answer{
+  font-size: 18px;
+}
+
+.yellow {
+  width: 67%;
+  padding-left: 36px;
+  color: #c60b1e;
+}
+
+
+h2 {
+  font-size: 1.2em;
+}
+
+.total {
+  font-size: 3em;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 20px;
+  flex-grow: 1;
+}
+
+.inputs {
+  flex-grow: 1;
+}
+
+.buttons {
+  width: 100%;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 10px;
+  margin-top: 4.4em;
+	
+}
+
+.column {
+  width: 100%;
+}
+.column:not(:last-child) {
+  margin-right: 10px;
+}
+
+.label,
+.text-input {
+  float: left;
+  display: block;
+  clear: both;
+}
+
+.label {
+  font-size: 0.8em;
+  margin-bottom: 0.2em;
+  display: block;
+  width: 100%;
+}
+
+.text-input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  font-family: inherit;
+  background: white;
+  border: 1px solid rgba(144, 81, 14, 0.4);
+  border-radius: 5px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1) inset;
+}
+
+.name-group {
+  flex-grow: 1;
+  flex-basis: 200px;
+}
+
+.submit-button {
+  padding: 10px 20px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 5px;
+  font-size: 1em;
+  font-family: inherit;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(144, 81, 14, 0.3);
+  box-shadow: 0 2px 2px rgba(144, 81, 14, 0.1);
+  border-radius: 5px;
+  transition: background 0.1s, color 0.1s, border-color 0.1s;
+}
+.submit-button:hover {
+  background: #C60B1E;
+  color: #ffc400;
+  border-color: transparent;
+}
