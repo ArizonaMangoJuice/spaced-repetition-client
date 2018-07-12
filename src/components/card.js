@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {checkAnswer, sendAnswer, fetchProtectedData, clearAnswer} from '../actions/protected-data';
-import Answer from './answer';
+import {checkAnswer, sendAnswer, fetchProtectedData} from '../actions/protected-data';
 import { refreshAuthToken } from '../actions/auth';
+import Word from './word';
 // import {Field, reduxForm, focus} from 'redux-form';
 
 export class QuestionCard extends React.Component{
@@ -16,10 +16,6 @@ export class QuestionCard extends React.Component{
     let answer = this.input.current.value;
     this.props.dispatch(checkAnswer(answer));
     this.props.dispatch(sendAnswer(answer));
-    // console.log(this.props.answer);
-    // console.log(answer === this.props.answer);
-    // console.log('correct');
-    // console.log(this.props.answer);
   }
  
   nextQuestion(){
@@ -29,20 +25,14 @@ export class QuestionCard extends React.Component{
   }
 
   render(){
-    console.log(this.props.question);
-    // let button = <></input>
     return <section>
-        {/* <section>
-          word in Espanol  
-        </section> */}
-        <h1>{this.props.question}</h1>
-        {/* <Answer /> */}
+        <Word />
         <form onSubmit={e => this.checkAnswer(e)}>
         <label>
           Your Answer:
           <input type="text" name="name"  ref={this.input}/>
         </label>
-        {this.props.answer !== null ? <button onClick={() => this.nextQuestion()}>test</button> : ''}
+        {this.props.answer !== null ? <button type="button" onClick={() => this.nextQuestion()}>test</button> : ''}
         {this.props.answer !== null ? <input type="submit" value="Submit" disabled/> : <input type="submit" value="Submit" />}
       </form>
       </section>
@@ -51,7 +41,6 @@ export class QuestionCard extends React.Component{
 
 const mapStateToProps = state => {
   return {
-    question: state.protectedData.data,
     answer: state.protectedData.answer
   }
 };

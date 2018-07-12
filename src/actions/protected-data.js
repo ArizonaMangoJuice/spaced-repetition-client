@@ -1,6 +1,7 @@
 import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
 import jwtDecode from 'jwt-decode';
+import { setWord } from './word';
 
 export const CHECK_ANSWER = 'CHECK_ANSWER';
 export const checkAnswer = input => ({
@@ -51,7 +52,6 @@ export const sendAnswer = () => (dispatch, getState) => {
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
         .then((data) => {
-            console.log(data);
             dispatch(recieveAnswer(data));            
         })
         .catch(err => {
@@ -73,8 +73,9 @@ export const fetchProtectedData = () => (dispatch, getState) => {
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
         .then((data) => {
-            // console.log(data);
-            dispatch(fetchProtectedDataSuccess(data));            
+            // console.log('protected data',data);
+            dispatch(fetchProtectedDataSuccess(data)); 
+            dispatch(setWord(data));   
         })
         .catch(err => {
             dispatch(fetchProtectedDataError(err));

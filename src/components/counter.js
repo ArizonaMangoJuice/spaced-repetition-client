@@ -8,7 +8,6 @@ export class Counter extends React.Component{
   }
 
   render(){
-    console.log(this.props.counter)
     return <h4>{this.props.counter} {this.props.counter === 1?'Question':'Questions'} answered correctly</h4>
   }
 }

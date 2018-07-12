@@ -19,45 +19,24 @@ export class Dashboard extends React.Component {
 
 
     render() {
-        if(this.props.protectedData.length > 0){
-            // console.log();
             return (
                 <div className="dashboard">
                     <div className="dashboard-username">
-                        Username: {this.props.username}
+                        <h2>Hello, {this.props.username}</h2>
                         <Counter />
                     </div>
-                    {/* <div className="dashboard-name">Name: {this.props.name}</div> */}
                     <div className="dashboard-protected-data">
                         <Answer />
-                        {this.props.protectedData[0].word}
                         <QuestionCard/>
                     </div>
                 </div>
-            );
-        }else{
-            return (
-                <div className="dashboard">
-                    <div className="dashboard-username">
-                        Username: {this.props.username}
-                    </div>
-                    {/* <div className="dashboard-name">Name: {this.props.name}</div> */}
-                    <div className="dashboard-protected-data">
-                       
-                    </div>
-                </div>
-            );
-        }
-        
+            );     
     }
 }
 
 const mapStateToProps = state => {
-    const {currentUser} = state.auth;
     return {
         username: state.auth.currentUser.username,
-        // name: `${currentUser.firstName} ${currentUser.lastName}`,
-        protectedData: state.protectedData.data
     };
 };
 
