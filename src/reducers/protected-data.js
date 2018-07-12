@@ -3,14 +3,16 @@ import {
     FETCH_PROTECTED_DATA_ERROR,
     CHECK_ANSWER,
     RECIEVE_ANSWER,
-    CLEAR_ANSWER
+    CLEAR_ANSWER,
+    ADD_REAL_ANSWER
 } from '../actions/protected-data';
 
 const initialState = {
     input: null,
     data: '',
     error: null,
-    answer: null
+    answer: null,
+    result: null
 };
 
 export default function wordReducer(state = initialState, action) {
@@ -32,12 +34,18 @@ export default function wordReducer(state = initialState, action) {
     } else if (action.type === RECIEVE_ANSWER){
         return {
             ...state,
-            answer: action.answer
+            result: action.answer
         }
     } else if (action.type === CLEAR_ANSWER){
         return {
             ...state,
+            result: null,
             answer: null
+        }
+    } else if(action.type === ADD_REAL_ANSWER){
+        return {
+            ...state,
+            answer: action.word
         }
     }
     return state;

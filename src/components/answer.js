@@ -8,7 +8,7 @@ export function Answer(props){
 }
 
 const mapStateToProps = state => ({
-  answer: state.protectedData.answer
+  answer: state.protectedData.result
 });
 
 export default connect(mapStateToProps)(Answer)

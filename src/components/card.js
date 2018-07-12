@@ -41,7 +41,7 @@ export class QuestionCard extends React.Component{
 
 const mapStateToProps = state => {
   return {
-    answer: state.protectedData.answer
+    answer: state.protectedData.result
   }
 };
 

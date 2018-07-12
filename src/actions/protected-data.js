@@ -9,13 +9,19 @@ export const checkAnswer = input => ({
     input
 });
 
+export const ADD_REAL_ANSWER = 'ADD_REAL_ANSWER';
+export const addRealAnswer = word => ({
+    type: ADD_REAL_ANSWER,
+    word
+});
+
 export const CLEAR_ANSWER = 'CLEAR_ANSWER';
 export const clearAnswer = () => ({
     type: CLEAR_ANSWER
 });
 
 export const RECIEVE_ANSWER = 'RECIEVE_ANSWER';
-export const recieveAnswer = answer => ({
+export const receiveAnswer = answer => ({
     type: RECIEVE_ANSWER,
     answer
 });
@@ -52,7 +58,14 @@ export const sendAnswer = () => (dispatch, getState) => {
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
         .then((data) => {
-            dispatch(recieveAnswer(data));            
+            console.log(typeof data);
+            if(typeof data === 'boolean'){
+                dispatch(receiveAnswer(data));            
+            } else {
+                console.log(data.answer);
+                dispatch(addRealAnswer(data.answer));
+                dispatch(receiveAnswer(data.boolean));
+            }
         })
         .catch(err => {
             console.error(err);
