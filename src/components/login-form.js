@@ -28,14 +28,14 @@ export class LoginForm extends React.Component {
                 <Field
                     component={Input}
                     type="text"
-                    name="username"
+                    name="Username"
                     id="username"
                     validate={[required, nonEmpty]}
                 />
                 <Field
                     component={Input}
                     type="password"
-                    name="password"
+                    name="Password"
                     id="password"
                     validate={[required, nonEmpty]}
                 />
