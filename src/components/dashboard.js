@@ -4,6 +4,7 @@ import requiresLogin from './requires-login';
 import {fetchProtectedData} from '../actions/protected-data';
 import QuestionCard  from './card';
 import Answer from './answer';
+import Counter from './counter';
 
 export class Dashboard extends React.Component {
     constructor(props){
@@ -24,6 +25,7 @@ export class Dashboard extends React.Component {
                 <div className="dashboard">
                     <div className="dashboard-username">
                         Username: {this.props.username}
+                        <Counter />
                     </div>
                     {/* <div className="dashboard-name">Name: {this.props.name}</div> */}
                     <div className="dashboard-protected-data">

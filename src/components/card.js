@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {checkAnswer, sendAnswer, fetchProtectedData, clearAnswer} from '../actions/protected-data';
 import Answer from './answer';
+import { refreshAuthToken } from '../actions/auth';
 // import {Field, reduxForm, focus} from 'redux-form';
 
 export class QuestionCard extends React.Component{
@@ -23,6 +24,7 @@ export class QuestionCard extends React.Component{
  
   nextQuestion(){
     this.props.dispatch(fetchProtectedData());
+    this.props.dispatch(refreshAuthToken());
     this.input.current.value = '';
   }
 
