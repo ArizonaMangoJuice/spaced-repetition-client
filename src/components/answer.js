@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 export function Answer(props){
   return <section>
-    <h2>{props.answer === true ? 'Correct' : props.answer !== null ? 'Incorrect' : ''}</h2>
+    {props.answer === true ? <h2>Correct</h2> : props.answer !== null ? <h2>Incorrect</h2> : null}
     </section>;
 }
 

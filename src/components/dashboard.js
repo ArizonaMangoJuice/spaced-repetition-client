@@ -15,17 +15,17 @@ export class Dashboard extends React.Component {
 
     render() {
             return (
-                <div className="dashboard">
-                    <div className="dashboard-username">
+                <section className="dashboard">
+                    <section className="dashboard-username">
                         <h2>Hello, {this.props.username}</h2>
                         <Counter />
-                    </div>
-                    <div className="dashboard-protected-data">
+                    </section>
+                    <section className="dashboard-protected-data">
                         <Answer />
                         <CorrectAnswer />
                         <QuestionCard/>
-                    </div>
-                </div>
+                    </section>
+                </section>
             );     
     }
 }

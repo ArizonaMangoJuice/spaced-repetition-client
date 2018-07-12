@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 export class Counter extends React.Component{
   render(){
     console.log(this.props.counter);
-    return <h4>{this.props.counter} {this.props.counter > 1 ?'Questions':'Question'} answered correctly</h4>
+    return <h3>{this.props.counter} {this.props.counter > 1 ?'Questions':'Question'} answered correctly</h3>
   }
 }
 
