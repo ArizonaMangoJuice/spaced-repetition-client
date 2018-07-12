@@ -8,6 +8,11 @@ export const checkAnswer = input => ({
     input
 });
 
+export const CLEAR_ANSWER = 'CLEAR_ANSWER';
+export const clearAnswer = () => ({
+    type: CLEAR_ANSWER
+});
+
 export const RECIEVE_ANSWER = 'RECIEVE_ANSWER';
 export const recieveAnswer = answer => ({
     type: RECIEVE_ANSWER,
@@ -30,7 +35,7 @@ export const sendAnswer = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     const decodedToken = jwtDecode(authToken);
     let userId = decodedToken.user.id;
-    const answer = getState().protectedData.answer;
+    const answer = getState().protectedData.input;
     return fetch(`${API_BASE_URL}/api/users/answer`, {
         method: 'POST',
         headers: {
@@ -56,6 +61,7 @@ export const sendAnswer = () => (dispatch, getState) => {
 }
 
 export const fetchProtectedData = () => (dispatch, getState) => {
+    dispatch(clearAnswer());
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/api/users/next`, {
         method: 'GET',

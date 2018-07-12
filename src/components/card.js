@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {checkAnswer, sendAnswer} from '../actions/protected-data';
+import {checkAnswer, sendAnswer, fetchProtectedData, clearAnswer} from '../actions/protected-data';
 import Answer from './answer';
 // import {Field, reduxForm, focus} from 'redux-form';
 
@@ -14,12 +14,18 @@ export class QuestionCard extends React.Component{
     e.preventDefault();
     let answer = this.input.current.value;
     this.props.dispatch(checkAnswer(answer));
-    this.props.dispatch(sendAnswer(answer))
+    this.props.dispatch(sendAnswer(answer));
     // console.log(this.props.answer);
     // console.log(answer === this.props.answer);
     // console.log('correct');
     // console.log(this.props.answer);
   }
+ 
+  nextQuestion(){
+    this.props.dispatch(fetchProtectedData());
+    this.input.current.value = '';
+  }
+
   render(){
     console.log(this.props.question);
     // let button = <></input>
@@ -34,7 +40,7 @@ export class QuestionCard extends React.Component{
           Your Answer:
           <input type="text" name="name"  ref={this.input}/>
         </label>
-        {this.props.answer !== null ? <button>test</button> : ''}
+        {this.props.answer !== null ? <button onClick={() => this.nextQuestion()}>test</button> : ''}
         {this.props.answer !== null ? <input type="submit" value="Submit" disabled/> : <input type="submit" value="Submit" />}
       </form>
       </section>
