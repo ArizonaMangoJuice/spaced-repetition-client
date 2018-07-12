@@ -7,12 +7,6 @@ import Answer from './answer';
 import Counter from './counter';
 
 export class Dashboard extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            questionIndex: Math.ceil(Math.random() * 10)
-        }
-    }
     componentDidMount() {
         this.props.dispatch(fetchProtectedData());
     }

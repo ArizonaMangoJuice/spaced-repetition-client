@@ -32,7 +32,7 @@ export class QuestionCard extends React.Component{
           Your Answer:
           <input type="text" name="name"  ref={this.input}/>
         </label>
-        {this.props.answer !== null ? <button type="button" onClick={() => this.nextQuestion()}>test</button> : ''}
+        {this.props.answer !== null ? <button type="button" onClick={() => this.nextQuestion()}>Next</button> : ''}
         {this.props.answer !== null ? <input type="submit" value="Submit" disabled/> : <input type="submit" value="Submit" />}
       </form>
       </section>
