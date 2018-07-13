@@ -1,11 +1,11 @@
-/* 
-#c60b1e
-#ffc400 
-*/
+@media screen and (max-width: 320px) {
+  .app {
+   width: 100%;
+  }
+}
 
-
-.app {
-  /* color: #c60b1e; */
-  /* background-color: #ffc400; */
-  /* background-image: url("http://www.thebullvine.com/wp-content/uploads/2014/12/Spain-Flag-Wallpaper-Image-Picture.jpg"); */
+@media screen and (min-width: 321px) {
+  .app {
+    width: 100%;
+   }
 }
