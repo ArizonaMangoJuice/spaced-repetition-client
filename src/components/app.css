@@ -1,0 +1,11 @@
+@media screen and (max-width: 320px) {
+  .app {
+   width: 100%;
+  }
+}
+
+@media screen and (min-width: 321px) {
+  .app {
+    width: 100%;
+   }
+}

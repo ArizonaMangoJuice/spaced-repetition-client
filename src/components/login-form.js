@@ -4,6 +4,8 @@ import Input from './input';
 import {login} from '../actions/auth';
 import {required, nonEmpty} from '../validators';
 
+import './login-form.css';
+
 export class LoginForm extends React.Component {
     onSubmit(values) {
         return this.props.dispatch(login(values.username, values.password));
@@ -25,22 +27,22 @@ export class LoginForm extends React.Component {
                     this.onSubmit(values)
                 )}>
                 {error}
-                <label htmlFor="username">Username</label>
+                <label htmlFor="username">Username
                 <Field
                     component={Input}
                     type="text"
                     name="username"
                     id="username"
                     validate={[required, nonEmpty]}
-                />
-                <label htmlFor="password">Password</label>
+                /></label>
+                <label htmlFor="password">Password
                 <Field
                     component={Input}
                     type="password"
                     name="password"
                     id="password"
                     validate={[required, nonEmpty]}
-                />
+                /></label>
                 <button disabled={this.props.pristine || this.props.submitting}>
                     Log in
                 </button>

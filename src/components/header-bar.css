@@ -1,0 +1,59 @@
+@media screen and (max-width: 320px) {
+  .header-bar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #c60b1e;
+    border-bottom: 2px solid white;
+  }
+  
+  .header-bar button {
+    align-self: flex-end;
+    width: 75px;
+    height: 25px;
+    background-color: #c60b1e;
+    font-size: 16px;
+    color: #ffc400;
+    border: 1px solid #ffc400;
+    border-radius: 5px;
+    margin: 5px;
+  }
+  
+  .header-bar h1 {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 40px;
+    color: #ffc400;
+    padding: 0px;
+    margin: 0px;
+    margin-left: 10px;
+  }  
+}
+
+@media screen and (min-width: 321px) {
+  .header-bar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #c60b1e;
+    border-bottom: 2px solid white;
+  }
+
+  .header-bar button {
+    align-self: flex-end;
+    width: 100px;
+    height: 35px;
+    background-color: #c60b1e;
+    font-size: 16px;
+    color: #ffc400;
+    border: 1px solid #ffc400;
+    border-radius: 5px;
+    margin: 5px;
+  }
+
+  .header-bar h1 {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 75px;
+    color: #ffc400;
+    padding: 0px;
+    margin: 0px;
+    margin-left: 10px;
+  }
+}
