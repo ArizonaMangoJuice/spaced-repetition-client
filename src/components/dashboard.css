@@ -70,6 +70,11 @@
   color: #c60b1e;
 }
 
+#greet-user{
+  font-size: 16px;
+  margin: 0;
+  padding-top: 12px;
+}
 
 h2 {
   font-size: 1.2em;
@@ -100,7 +105,7 @@ h2 {
   display: flex;
   align-items: flex-end;
   margin-bottom: 10px;
-  margin-top: 4.4em;
+  margin-top: 2.5em;
 	
 }
 
@@ -160,4 +165,40 @@ h2 {
   background: #C60B1E;
   color: #ffc400;
   border-color: transparent;
+}
+
+@media screen and (max-width: 420px) {
+  .container{
+    min-width: 320px;
+  }
+
+  #counter{
+    font-size: 12px;
+  }
+
+  .red p {
+    width: auto;
+    font-size: 18px;
+  }
+
+  .answer h2{
+    font-size: 18px;
+  }
+
+  #correct-answer{
+    font-size: 12px;
+  }
+
+  .yellow{
+    padding-left: 18px;
+  }
+
+  .red{
+    padding-right: 0;
+    padding-left: 14px;
+  }
+
+  .row{
+    margin-top: .7em;
+  }
 }

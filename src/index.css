@@ -4,4 +4,8 @@ body {
   padding: 0;
   font-family: sans-serif;
   background-image: url("http://www.thebullvine.com/wp-content/uploads/2014/12/Spain-Flag-Wallpaper-Image-Picture.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
 }

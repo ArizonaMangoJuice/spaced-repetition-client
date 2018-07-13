@@ -7,6 +7,7 @@ import CorrectAnswer from './correctAnswer';
 import Answer from './answer';
 import Counter from './counter';
 import './dashboard.css';
+import GreetUser from './greetUser';
 // import {Field, reduxForm, focus} from 'redux-form';
 
 export class QuestionCard extends React.Component{
@@ -37,6 +38,7 @@ export class QuestionCard extends React.Component{
           <CorrectAnswer />
         </section>
         <section className='yellow'>
+          <GreetUser />
           <form onSubmit={e => this.checkAnswer(e)} className='form'>
             <section className='inputs'>
               <section className='row'>
