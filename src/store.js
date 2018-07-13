@@ -22,7 +22,6 @@ const store = createStore(
 const authToken = loadAuthToken();
 if (authToken) {
     const token = authToken;
-    // console.log(token);
     store.dispatch(setAuthToken(token));
     // store.dispatch(refreshAuthToken()); //still havent implemented refresh on the serve side
 }

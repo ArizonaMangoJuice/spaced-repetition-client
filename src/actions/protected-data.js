@@ -58,11 +58,9 @@ export const sendAnswer = () => (dispatch, getState) => {
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
         .then((data) => {
-            console.log(typeof data);
             if(typeof data === 'boolean'){
                 dispatch(receiveAnswer(data));            
             } else {
-                console.log(data.answer);
                 dispatch(addRealAnswer(data.answer));
                 dispatch(receiveAnswer(data.boolean));
             }
@@ -86,7 +84,6 @@ export const fetchProtectedData = () => (dispatch, getState) => {
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
         .then((data) => {
-            // console.log('protected data',data);
             dispatch(fetchProtectedDataSuccess(data)); 
             dispatch(setWord(data));   
         })

@@ -14,4 +14,4 @@ export const length = length => value => {
 export const matches = field => (value, allValues) =>
     field in allValues && value.trim() === allValues[field].trim()
         ? undefined
-        : console.log(field) && 'Does not match';
+        :'Does not match';
