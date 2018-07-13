@@ -1,11 +1,6 @@
 import reducer from './auth';
 
 import {
-  SET_AUTH_TOKEN,
-  CLEAR_AUTH,
-  AUTH_REQUEST,
-  AUTH_SUCCESS,
-  AUTH_ERROR,
   setAuthToken,
   clearAuth,
   authSuccess,
