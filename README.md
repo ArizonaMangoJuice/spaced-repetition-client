@@ -30,6 +30,11 @@ Standard/Thinkful-style
 - passport-jwt
 - passport-local
 
+## Screenshots
+![alt text](https://gdurl.com/C8zL)
+![alt text](https://gdurl.com/HUegP)
+![alt text](https://gdurl.com/5tlQ)
+
 ### Live server!
 https://spaced-repetition-server-ic.herokuapp.com 
 
