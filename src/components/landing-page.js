@@ -2,6 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
 
+import './landing-page.css';
+
 import LoginForm from './login-form';
 
 export function LandingPage(props) {
@@ -9,7 +11,6 @@ export function LandingPage(props) {
     if (props.loggedIn) {
         return <Redirect to="/dashboard" />;
     }
-
     return (
         <div className="home">
             <h2>Learn Spanish Quickly</h2>
