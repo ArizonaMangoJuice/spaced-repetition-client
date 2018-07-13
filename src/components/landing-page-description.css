@@ -4,7 +4,8 @@
     width: 100%;
     margin: 0 auto;
     color: #ae0a1a;    
-    border: 1px solid black;
+    border: 3px solid #c60b1e;
+    border-radius: 5px;
     margin-top: 75px;
   }
   
@@ -30,7 +31,8 @@
     margin: 0 auto;
     margin-top: 75px;
     color: #ae0a1a;
-    border: 1px solid black;
+    border: 3px solid #c60b1e;
+    border-radius: 5px;
   }
 
   .opacity-background {
