@@ -31,7 +31,7 @@ Standard/Thinkful-style
 - passport-local
 
 ## Screenshots
-![alt text](https://gdurl.com/C8zL)
+![alt text](https://gdurl.com/uVvJ)
 ![alt text](https://gdurl.com/HUegP)
 ![alt text](https://gdurl.com/5tlQ)
 
