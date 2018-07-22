@@ -1,7 +1,7 @@
 # Isael and Cam's Spaced Repetition Project
 
 ### Live client!
-https://warm-harbor-78349.herokuapp.com/
+https://protected-ridge-99600.herokuapp.com/
 
 Create an account and start learning! It's that simple! Input an answer, hit submit!
 If your guess is correct, you'll see a message saying so and your score tally increment!
