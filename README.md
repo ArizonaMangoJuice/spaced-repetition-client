@@ -7,6 +7,11 @@ Create an account and start learning! It's that simple! Input an answer, hit sub
 If your guess is correct, you'll see a message saying so and your score tally increment!
 If your guess is incorrect, you'll see a message saying so, and your score will remain unchanged!
 
+or you can use this demo account!
+
+- username: Demo
+- password: password123
+
 ## Features
 - Learn 10 Spanish words!
 - App will help you learn the words you don't know
