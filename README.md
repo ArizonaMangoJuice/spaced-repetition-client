@@ -1,4 +1,5 @@
-# Isael and Cam's Spaced Repetition Project
+# Si Señor
+## Isael and Cam's Spaced Repetition Project
 
 ### Live client!
 https://protected-ridge-99600.herokuapp.com/
