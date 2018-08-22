@@ -44,7 +44,7 @@ export class QuestionCard extends React.Component{
               <section className='row'>
                 <section className='column name-group'>
                   <label className='label'>
-                    Your Answer:
+                    Type your answer in the box
                     <input className='text-input name-input' type="text" name="name"  ref={this.input}/>
                   </label>
                 </section>
